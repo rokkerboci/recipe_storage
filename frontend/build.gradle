@@ -1,0 +1,20 @@
+plugins {
+    id "com.github.node-gradle.node" version "3.0.1"
+    id "base"
+}
+
+node {
+    version = '14.15.5'
+}
+
+npm_run_build {
+    inputs.files fileTree("src")
+    inputs.file 'package.json'
+    inputs.file 'package-lock.json'
+    outputs.dir 'dist'
+}
+assemble.dependsOn npm_run_build
+
+clean {
+    delete "dist"
+}

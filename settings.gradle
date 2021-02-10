@@ -1,0 +1,4 @@
+rootProject.name = 'recipe_book'
+
+include(":backend")
+include(":frontend")
