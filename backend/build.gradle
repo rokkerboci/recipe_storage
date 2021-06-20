@@ -16,7 +16,7 @@ configurations {
 processResources {
     dependsOn ":frontend:build"
 
-    from("$rootDir/frontend/dist/frontend") {
+    from("$rootDir/frontend/dist/starter") {
         into('/static')
     }
 }

@@ -22,6 +22,8 @@ import { appInitializerProviders } from '@core/initializers';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemDataService } from './shared/in-mem/in-mem-data.service';
+import { NgxHalClientModule } from '@lagoshny/ngx-hal-client';
+import { ExternalConfigurationService } from './external-configuration.service';
 
 // Required for AOT compilation
 export function TranslateHttpLoaderFactory(http: HttpClient) {
@@ -34,6 +36,7 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgxHalClientModule.forRoot(),
     CoreModule,
     ThemeModule,
     RoutesModule,
@@ -55,6 +58,7 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [
+    { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
     { provide: BASE_URL, useValue: environment.baseUrl },
     httpInterceptorProviders,
     appInitializerProviders,

@@ -55,6 +55,8 @@ const routes: Routes = [
         loadChildren: () =>
           import('./permissions/permissions.module').then(m => m.PermissionsModule),
       },
+  { path: 'cookbook', loadChildren: () => import('./cookbook/cookbook.module').then(m => m.CookbookModule) },
+  { path: 'storage', loadChildren: () => import('./storage/storage.module').then(m => m.StorageModule) },
     ],
   },
   {

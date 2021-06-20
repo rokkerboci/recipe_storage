@@ -29,6 +29,30 @@
       ]
     },
     {
+      "route": "cookbook",
+      "name": "cookbook",
+      "type": "sub",
+      "icon": "book",
+      "children": [
+        {
+          "route": "recipes",
+          "name": "recipes",
+          "type": "link"
+        },
+        {
+          "route": "ingredients",
+          "name": "ingredients",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "route": "storage",
+      "name": "storage",
+      "type": "link",
+      "icon": "storage"
+    },
+    {
       "route": "material",
       "name": "material",
       "type": "sub",
